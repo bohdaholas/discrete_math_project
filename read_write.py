@@ -36,7 +36,10 @@ def  graph_dict(path_to_file: str, oriented=False) -> (dict):
             key_dict.update({edge_el[0]: []})'''
         for edge in graph:
             edge = tuple(edge)
-            key_dict.update({edge[0]: edge[1]})
+            if edge[0] not in key_dict:
+                key_dict.update({edge[0]: [edge[1]]})
+            else:
+                key_dict[edge[0]].append(edge[1])
 
     return key_dict
 
