@@ -8,6 +8,8 @@ undirected graph.
 # sys.setrecursionlimit(10**6)
 # IF MEMORY ERROR OCCURS, LINES ABOVE WILL HELP FOR LINUX!
 
+from read_write_graph import read_graph
+
 import sys
 
 visited = {} #dictionary for checking if node is already visited
