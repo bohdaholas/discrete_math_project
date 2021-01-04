@@ -48,19 +48,15 @@ def bridge_search(u: (str, int), parent: (str, int), curr_h: int, g: dict):
 
 def find_bridges(g: dict) -> list:
     """Starts depth first search, which finds bridges, giving it
-    first node. Graph is required. Returns list of bridges.
-    >>> find_bridges({'a':['b'], 'b':['a', 'c', 'd'], 'c':['b'], 'd':['b']})
-    [('b', 'c'), ('b', 'd'), ('a', 'b')]
+    first node. Requires dict, where keys are nodes and values are connected neighbour nodes Returns list of bridges.
     >>> find_bridges({0:[1], 1:[0, 2, 3], 2:[1], 3:[1]})
     [(1, 2), (1, 3), (0, 1)]
     >>> find_bridges({0:[1], 1:[0, 2, 3], 2:[1, 3], 3:[1, 2]})
     [(0, 1)]
-    >>> find_bridges({'a':['b'], 'b':['a', 'c', 'd'], 'c':['b', 'd'], 'd':['b', 'c']})
-    [('a', 'b')]
     """
 
 
-    sys.setrecursionlimit(len(g)) # sets recursion limit
+    # sys.setrecursionlimit(len(g)) # sets recursion limit if STACKOVERFLOW
  
     visited.clear()
     h.clear()
