@@ -6,15 +6,7 @@
 
 def read_graph(path: str) -> dict:
     """
-    # >>> read_graph('graphs/graph_100_1942_0.csv')
-    # >>> read_graph('graphs/graph_100_2160_1.csv')
-    # >>> read_graph('graphs/graph_5000_247404_0.csv')
-    # >>> read_graph('graphs/graph_5000_248580_1.csv')
-    # >>> read_graph('graphs/graph_100000_4999_0.csv')
-    # >>> read_graph('graphs/graph_100000_4999_1.csv')
-    # >>> read_graph('graphs/graph_100000_4997346_0.csv')
-    # >>> read_graph('graphs/graph_100000_4998622_1.csv')
-    >>> read_graph('graphs/0.csv')
+    Read graph and return the dict of it
     """
     with open(path, "r", encoding="utf-8") as file:
         graph_type = int(path[-5])  # 0 or 1
@@ -104,4 +96,4 @@ def articul_points(graph: list) -> set:
     return articulation_points
 
 
-# print(articul_points(to_list(read_graph("graphs/graph_5000_247404_0.csv"))))
+#print(articul_points(to_list(read_graph("graphs/graph_5000_247404_0.csv"))))
