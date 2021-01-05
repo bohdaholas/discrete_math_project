@@ -21,7 +21,7 @@ def dfs(graph, starting_node):
     return visited
 
 
-def find_components(graph: dict):
+def find_components(graph: dict, all=False):
     """
     Return connected components of the given graph
     >>> find_components(read_graph('graphs/graph_100_1942_0.csv'))
@@ -34,6 +34,9 @@ def find_components(graph: dict):
     for node in graph:
         if node not in used_nodes:
             component = dfs(graph, node)
-            components.append(component[0])
+            if all:
+                components.append(component)
+            else:
+                components.append(component[0])
             used_nodes = used_nodes.union(component)
     return components
