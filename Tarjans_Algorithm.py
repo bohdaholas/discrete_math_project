@@ -23,7 +23,7 @@ def tarjan_algorithm_scc(graph: dict) -> list:
     groups = []  # SCCs: list of vertices.
     groupid = {}  # Map from vertex to SCC ID.
 
-    def strongconnect(v: int) -> list:
+    def strongconnect(v: int):
         '''
         Returns scc for graph.
         '''

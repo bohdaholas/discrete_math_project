@@ -4,39 +4,10 @@
 # sys.setrecursionlimit(10 ** 6)
 
 
-def read_graph(path: str) -> dict:
-    """
-    Read graph and return the dict of it
-    """
-    with open(path, "r", encoding="utf-8") as file:
-        graph_type = int(path[-5])  # 0 or 1
-        adjacency_list = {}
-        if not graph_type:  # non-oriented
-            for line in file:
-                nodes = line.split()
-                if nodes[0] not in adjacency_list:
-                    adjacency_list[nodes[0]] = [nodes[1]]
-                else:
-                    adjacency_list[nodes[0]].append(nodes[1])
-                if nodes[1] not in adjacency_list:
-                    adjacency_list[nodes[1]] = [nodes[0]]
-                else:
-                    adjacency_list[nodes[1]].append(nodes[0])
-        else:  # oriented
-            for line in file:
-                nodes = line.split(" ")
-                if nodes[0] not in adjacency_list:
-                    adjacency_list[nodes[0]] = [nodes[1]]
-                else:
-                    adjacency_list[nodes[0]].append(nodes[1])
-                if nodes[1] not in adjacency_list:
-                    adjacency_list[nodes[1]] = []
-                else:
-                    pass
-    return adjacency_list
+from read_write_graph import read_graph
 
 
-def to_list(graph: str) -> list:
+def to_list(graph: dict) -> list:
     """
     Return the list of graph edges
     """
